@@ -1,0 +1,288 @@
+db_schema:
+  schema_id: product_master_schema
+  db_name: CLOUDERP_DEVP_V3
+  schema_name: product_master_schema
+  tables:
+    - table_id: product_master
+      name: product_master
+      primary_keys:
+        - client_id
+        - product_id
+      columns:
+        - name: product_id
+          type: VARCHAR
+          length: 20
+          auto_increment: false
+          not_null: true
+        - name: product_code # default barcode or menu code
+          type: NVARCHAR
+          length: 40
+          auto_increment: false
+          not_null: true
+        - name: group_code
+          type: NVARCHAR
+          length: 50
+          auto_increment: false
+          not_null: true
+        - name: sub_group_code
+          type: NVARCHAR
+          length: 50
+          auto_increment: false
+          not_null: true
+        - name: product_des
+          type: NVARCHAR
+          length: 100
+          auto_increment: false
+          not_null: true
+        - name: product_des2
+          type: NVARCHAR
+          auto_increment: false
+          not_null: false
+        # large description is optional, it will be stored in a separate table
+        - name: price1
+          type: FLOAT
+          precision: 18
+          scale: 3
+          auto_increment: false
+          not_null: false
+        - name: price2
+          type: FLOAT
+          precision: 18
+          scale: 3
+          auto_increment: false
+          not_null: false
+          default_value: 0
+        - name: price3
+          type: FLOAT
+          precision: 18
+          scale: 3
+          auto_increment: false
+          not_null: false
+          default_value: 0
+        - name: price4
+          type: FLOAT
+          precision: 18
+          scale: 3
+          auto_increment: false
+          not_null: false
+          default_value: 0
+        - name: price5
+          type: FLOAT
+          precision: 18
+          scale: 3
+          auto_increment: false
+          not_null: false
+          default_value: 0
+        - name: stock_type
+          type: VARCHAR
+          length: 10
+          auto_increment: false
+          not_null: false
+        - name: expiry
+          type: CHAR
+          length: 1
+          auto_increment: false
+          not_null: false
+          default_value: N
+        - name: image_url
+          type: VARCHAR
+          auto_increment: false
+          not_null: false
+          default_value: N
+        - name: tax_group_code
+          type: VARCHAR
+          length: 10
+          auto_increment: false
+          not_null: false
+        - name: division_code
+          type: NVARCHAR
+          length: 6
+          auto_increment: false
+          not_null: true
+        - name: client_id
+          type: INT
+          precision: 18
+          auto_increment: false
+          not_null: true
+        - name: online
+          type: CHAR
+          length: 1
+          auto_increment: false
+          not_null: false
+          default_value: N
+        - name: valid
+          type: CHAR
+          length: 1
+          auto_increment: false
+          not_null: false
+          default_value: N
+        - name: uom_code
+          type: VARCHAR
+          length: 8
+          auto_increment: false
+          not_null: false
+          default_value: N
+        - name: item_size
+          type: VARCHAR
+          length: 20
+          auto_increment: false
+          not_null: false
+        - name: pack_id
+          type: VARCHAR
+          length: 20
+          auto_increment: false
+          not_null: false
+        - name: color
+          type: VARCHAR
+          length: 20
+          auto_increment: false
+          not_null: false
+        - name: uom_unit
+          type: FLOAT
+          precision: 18
+          auto_increment: false
+          not_null: false
+          default_value: 0
+        - name: scale_type
+          type: CHAR
+          length: 1
+          auto_increment: false
+          not_null: false
+          default_value: N
+        - name: item_level
+          type: FLOAT
+          precision: 10
+          auto_increment: false
+          not_null: true
+        - name: master_product_id
+          type: VARCHAR
+          length: 20
+          auto_increment: false
+          not_null: false
+        - name: product_category
+          type: VARCHAR
+          length: 20
+          auto_increment: false
+          not_null: false
+          default_value: new
+        - name: product_ref
+          type: VARCHAR
+          length: 20
+          auto_increment: false
+          not_null: false
+        - name: supplier_code
+          type: VARCHAR
+          length: 10
+          auto_increment: false
+          not_null: false
+        - name: product_cost
+          type: FLOAT
+          precision: 20
+          auto_increment: false
+          not_null: false
+          default_value: 0
+        - name: created_date
+          type: DATETIME
+          auto_increment: false
+          not_null: false
+          default_value: CURRENT_TIMESTAMP
+        - name: created_user
+          type: NVARCHAR
+          length: 20
+          auto_increment: false
+          not_null: false
+        - name: modified_date
+          type: DATETIME
+          auto_increment: false
+          not_null: false
+          default_value: CURRENT_TIMESTAMP
+        - name: modified_user
+          type: NVARCHAR
+          length: 20
+          auto_increment: false
+          not_null: false
+        - name: tax_enabled
+          type: CHAR
+          length: 1
+          auto_increment: false
+          not_null: false
+        - name: stock_count_type
+          type: VARCHAR
+          length: 50
+          auto_increment: false
+          not_null: false
+        - name: brand_id
+          type: NVARCHAR
+          length: 50
+          auto_increment: false
+          not_null: false
+        - name: scalable_type
+          type: INT  # 0=No, 1=price ,  2=weight, 3= count 
+          auto_increment: false
+          not_null: false
+        - name: conversion_factor  ## conversion factor for packing to base unit
+          type: FLOAT
+          not_null: true
+          default_value: 1        
+        - name: base_uom_code
+          type: NVARCHAR(20)
+          not_null: true
+          description: "Base unit of measure for inventory"
+
+        - name: purchase_uom_code  # this is just for master entry, but it will be inserted to the product_uom table
+          type: NVARCHAR(20)
+          description: "Default purchasing UOM"
+
+        - name: sales_uom_code # this is just for master entry, but it will be inserted to the product_uom table
+          type: NVARCHAR(20)
+          description: "Default sales UOM"
+
+        - name: item_attributes
+          type: INT
+          not_null: true
+          default_value: 0
+          description: "1 = normal item, 2 = Perishable,  3=recipe, 4=Service, 5=Gift Card, 6=Membership, 7=Discount, 8=Coupon, 9=Combo, 10=KOT Item"
+          # combo is can be cobined item for retail and set menu for restaurants
+        - name: allow_Negative
+          type: CHAR
+          length: 1
+          auto_increment: false
+          not_null: false
+          default_value: N
+
+        # Costing
+        - name: costing_method
+          type: NVARCHAR(20)
+          not_null: true
+          default_value: "AVERAGE"
+          description: "AVERAGE, FIFO, LIFO, LAST-NET, SPECIFIC"
+
+        - name: item_type
+          type: NVARCHAR(20)
+          not_null: true
+          default_value: "RETAIL"
+          description: "RETAIL, MATERIAL, MENU, SEMI-FINISHED, SERVICE"
+
+        # Inventory Control
+        - name: inventory_control
+          type: NVARCHAR(20)
+          not_null: true
+          default_value: "STOCKED"
+          description: "STOCKED, NON_STOCKED, RECIPE_ONLY"
+
+        - name: tracking_method
+          type: NVARCHAR(20)
+          not_null: true
+          default_value: "NONE"
+          description: "NONE, SIZE-COLOR,BATCH, SERIAL, EXPIRY, COMPOSITE"  
+        - name: sync_id
+          type: FLOAT
+          precision: 38
+          auto_increment: true
+          not_null: true
+        - name : discontinue_type  # NONE, NO-PURCHASE, ON_HOLD,ON_QTY_ZERO,SAMPLE, DISCONTINUED
+          type: NVARCHAR(20)
+          not_null: false
+          default_value: "NONE"
+          description: "NONE,NO-PURCHASE, ON_HOLD,ON_QTY_ZERO, DISCONTINUED"
+ 

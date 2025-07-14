@@ -1,0 +1,23 @@
+doc_id: user_module_access
+module_id: settings
+submodule_id: settings
+doc_type: crud
+update_type: master-detail
+operation_type : single_row
+schema_id: mast_user_module_access_schema
+data_tables:
+  - table_id: mast_user_module_access
+    update_type: master
+routes:
+  - path: /mast_user_module_access
+    methods:
+      - GET
+      - POST
+      - PUT
+      - DELETE
+    operations:
+      - read
+      - create
+      - update
+      - delete
+      - list

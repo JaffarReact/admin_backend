@@ -1,0 +1,25 @@
+doc_id: multi_module_delete
+module_id: settings
+submodule_id: settings
+doc_type: crud
+update_type: multi-master
+operation_type: multi_row
+schema_id: mast_db_module_schema
+data_tables:
+  - table_id: mast_db_module
+    update_type: master
+  - table_id: mast_db_component_config
+    update_type: detail
+routes:
+  - path: /multi_module_delete
+    methods:
+      - GET
+      - POST
+      - PUT
+      - DELETE
+    operations:
+      - read
+      - create
+      - update
+      - delete
+      - list

@@ -1,0 +1,100 @@
+db_schema:
+  schema_id: mast_db_component_config_schema
+  db_name: DEVP_LIVE_DASHBOARD_ADMIN
+  schema_name: mast_db_component_config_schema
+  tables:
+    - table_id: mast_db_component_config
+      name: mast_db_component_config
+      primary_keys:
+        - module_id
+        - report_id
+      columns:
+        - name: module_id
+          type: NVARCHAR
+          length: 50
+          auto_increment: false
+          not_null: true
+        - name: report_id
+          type: NVARCHAR
+          length: 50
+          auto_increment: false
+          not_null: true
+        - name: report_alias
+          type: NVARCHAR
+          length: 100
+          auto_increment: false
+          not_null: true
+        - name: report_name
+          type: NVARCHAR
+          length: 255
+          auto_increment: false
+          not_null: true
+        - name: response_type
+          type: NVARCHAR
+          length: 50
+          auto_increment: false
+          not_null: true
+        - name: data_path
+          type: NVARCHAR
+          length: 1000
+          auto_increment: false
+          not_null: true
+        - name: ui_component
+          type: NVARCHAR
+          length: 100
+          auto_increment: false
+          not_null: true
+        - name: display_order
+          type: INT
+          auto_increment: false
+          not_null: false
+          default_value: 0
+        - name: filters
+          type: NVARCHAR
+          auto_increment: false
+          not_null: false
+        - name: options
+          type: NVARCHAR
+          auto_increment: false
+          not_null: false
+        - name: fields
+          type: NVARCHAR
+          auto_increment: false
+          not_null: false
+        - name: columns
+          type: NVARCHAR
+          auto_increment: false
+          not_null: false
+        - name: chart_config
+          type: NVARCHAR
+          auto_increment: false
+          not_null: false
+        - name: active
+          type: CHAR
+          length: 1
+          auto_increment: false
+          not_null: false
+          default_value: Y
+        - name: client_id
+          type: INT
+          auto_increment: false
+          not_null: false
+        - name: created_date
+          type: DATETIME
+          auto_increment: false
+          not_null: false
+          default_value: CURRENT_TIMESTAMP
+        - name: created_user
+          type: NVARCHAR
+          length: 100
+          auto_increment: false
+          not_null: false
+        - name: updated_date
+          type: DATETIME
+          auto_increment: false
+          not_null: false
+        - name: updated_user
+          type: NVARCHAR
+          length: 100
+          auto_increment: false
+          not_null: false

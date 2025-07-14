@@ -1,0 +1,13 @@
+# this is the configuration file for the system, this is the one used by this server to start up
+system:
+  name: mysystem
+  version: 1.0
+  description: My system description
+  port: 8011
+  crudbaseurl : /crudapi/live_dashboard_admin
+  appbaseurl : /appapi
+  app_id: live_dashboard_admin
+  appcode: live_dashboard_admin
+  appconfigpath: ./config/live_dashboard_admin/app
+  appconfigfile: app_config.yaml
+  usessl: N

@@ -1,0 +1,2 @@
+- schema_id: log_schema
+  schema_dsl_file: ./config/live_dashboard_admin/log/log_db_dsl.yaml

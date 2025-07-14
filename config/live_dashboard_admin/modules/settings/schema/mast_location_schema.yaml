@@ -1,0 +1,103 @@
+db_schema:
+  schema_id: mast_location_schema
+  db_name: DEVP_LIVE_DASHBOARD_ADMIN
+  schema_name: mast_location_schema
+  tables:
+    - table_id: mast_location
+      name: mast_location
+      primary_keys:
+        - client_id
+        - loc_code
+      columns:
+        - name: client_id
+          type: INT
+          auto_increment: false
+          not_null: true
+        - name: loc_code
+          type: VARCHAR
+          length: 20
+          auto_increment: false
+          not_null: true
+        - name: loc_name
+          type: VARCHAR
+          length: 100
+          auto_increment: false
+          not_null: false
+        - name: phone
+          type: VARCHAR
+          length: 20
+          auto_increment: false
+          not_null: false
+        - name: address
+          type: VARCHAR
+          length: 255
+          auto_increment: false
+          not_null: false
+        - name: active
+          type: CHAR
+          length: 1
+          auto_increment: false
+          not_null: false
+        - name: division_code
+          type: NVARCHAR
+          length: 50
+          auto_increment: false
+          not_null: false
+        - name: area_id
+          type: NVARCHAR
+          length: 50
+          auto_increment: false
+          not_null: false
+        - name: country_id
+          type: NVARCHAR
+          length: 50
+          auto_increment: false
+          not_null: false
+        - name: city_id
+          type: NVARCHAR
+          length: 50
+          auto_increment: false
+          not_null: false
+        - name: lat
+          type: NUMERIC
+          precision: 10
+          scale: 6
+          auto_increment: false
+          not_null: false
+        - name: lon
+          type: NUMERIC
+          precision: 10
+          scale: 6
+          auto_increment: false
+          not_null: false
+        - name: currency
+          type: NCHAR
+          length: 3
+          auto_increment: false
+          not_null: false
+        - name: rounding
+          type: INT
+          auto_increment: false
+          not_null: false
+        - name: created_date
+          type: DATETIME
+          auto_increment: false
+          not_null: false
+        - name: created_user
+          type: NVARCHAR
+          length: 100
+          auto_increment: false
+          not_null: false
+        - name: modified_date
+          type: DATETIME
+          auto_increment: false
+          not_null: false
+        - name: modified_user
+          type: NVARCHAR
+          length: 100
+          auto_increment: false
+          not_null: false
+        - name: sync_id
+          type: INT
+          auto_increment: false
+          not_null: false

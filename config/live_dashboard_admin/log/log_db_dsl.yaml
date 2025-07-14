@@ -1,0 +1,50 @@
+db_schema:
+  schema_id : log_schema
+  db_name: log_db
+  tables:
+    - table_id: logdata
+      name: logdata
+      primary_keys:
+        - recno
+      indexes:
+        - name: logdata_index
+          columns:
+            - tablename
+            - operation
+            - user_id
+      columns:
+        - name: recno
+          type: INTEGER
+          auto_increment: true
+          not_null: true
+        - name: module_id
+          type: string
+          not_null: true
+        - name: submodule_id
+          type: TEXT
+          not_null: true
+          default_value: NONE
+        - name: doc_id
+          type: TEXT
+          not_null: true
+        - name: user_id
+          type: TEXT
+          not_null: true
+        - name: timestamp
+          type: TEXT
+          not_null: true
+        - name: operation
+          type: TEXT
+          not_null: true
+        - name: tablename
+          type: TEXT
+          not_null: true
+        - name: data
+          type: TEXT
+          not_null: true
+        - name: created_at
+          type: TEXT
+          not_null: false
+        - name: previousdata
+          type: TEXT
+          not_null: false

@@ -1,0 +1,10 @@
+- schema_id: mast_clients_schema
+  schema_dsl_file: ./config/live_dashboard_admin/modules/settings/schema/mast_clients_schema.yaml
+- schema_id: mast_location_schema
+  schema_dsl_file: ./config/live_dashboard_admin/modules/settings/schema/mast_location_schema.yaml
+- schema_id: mast_user_list_schema
+  schema_dsl_file: ./config/live_dashboard_admin/modules/settings/schema/mast_user_list_schema.yaml
+- schema_id: mast_user_module_access_schema
+  schema_dsl_file: ./config/live_dashboard_admin/modules/settings/schema/mast_user_module_access_schema.yaml
+- schema_id: mast_db_module_schema
+  schema_dsl_file: ./config/live_dashboard_admin/modules/settings/schema/mast_db_module_schema.yaml

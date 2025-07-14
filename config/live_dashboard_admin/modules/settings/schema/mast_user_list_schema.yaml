@@ -1,0 +1,110 @@
+db_schema:
+  schema_id: mast_user_list_schema
+  db_name: DEVP_LIVE_DASHBOARD_ADMIN
+  schema_name: mast_user_list_schema
+  tables:
+    - table_id: mast_user_list
+      name: mast_user_list
+      primary_keys:
+        - client_id
+        - user_id
+      columns:
+        - name: client_id
+          type: INT
+          auto_increment: false
+          not_null: true
+        - name: user_id
+          type: NVARCHAR
+          length: 50
+          auto_increment: false
+          not_null: true
+        - name: email
+          type: CHAR
+          length: 100
+          auto_increment: false
+          not_null: false
+        - name: password
+          type: NVARCHAR
+          length: 255
+          auto_increment: false
+          not_null: false
+        - name: user_type
+          type: NVARCHAR
+          length: 50
+          auto_increment: false
+          not_null: false
+        - name: created_date
+          type: DATETIME
+          auto_increment: false
+          not_null: false
+        - name: created_user
+          type: NVARCHAR
+          length: 100
+          auto_increment: false
+          not_null: false
+        - name: modified_date
+          type: DATETIME
+          auto_increment: false
+          not_null: false
+        - name: modified_user
+          type: NVARCHAR
+          length: 100
+          auto_increment: false
+          not_null: false
+        - name: user_name
+          type: NVARCHAR
+          length: 100
+          auto_increment: false
+          not_null: false
+      relationships:
+        - type: one_to_many
+          table: mast_user_location_access
+          foreign_keys:
+            - user_id
+            - client_id
+
+
+    - table_id: mast_user_location_access
+      name: mast_user_location_access
+      primary_keys:
+        - client_id
+        - user_id
+        - loc_code
+      columns:
+        - name: client_id
+          type: INT
+          auto_increment: false
+          not_null: true
+        - name: user_id
+          type: NVARCHAR
+          length: 50
+          auto_increment: false
+          not_null: true
+        - name: loc_code
+          type: NVARCHAR
+          length: 4
+          auto_increment: false
+          not_null: true
+        - name: access
+          type: NVARCHAR
+          length: 1
+          auto_increment: false
+          not_null: false
+        - name: createdBy
+          type: NVARCHAR
+          length: 50
+          auto_increment: false
+          not_null: false
+        - name: createdDate
+          type: DATETIME
+          auto_increment: false
+          not_null: false
+        - name: updateBy
+          type: NVARCHAR
+          length: 50
+          auto_increment: false
+          not_null: false
+        - name: updateDate
+          type: DATETIME
+          auto_increment: false
+          not_null: false

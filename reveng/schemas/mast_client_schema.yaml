@@ -1,0 +1,9 @@
+db_schema:
+  schema_id: mast_client_schema
+  db_name: DEVP_LIVE_DASHBOARD_ADMIN
+  schema_name: mast_client_schema
+  tables:
+    - table_id: mast_client
+      name: mast_client
+      primary_keys:
+      columns:

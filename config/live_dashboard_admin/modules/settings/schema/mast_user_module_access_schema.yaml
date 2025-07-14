@@ -1,0 +1,49 @@
+db_schema:
+  schema_id: mast_user_module_access_schema
+  db_name: DEVP_LIVE_DASHBOARD_ADMIN
+  schema_name: mast_user_module_access_schema
+  tables:
+    - table_id: mast_user_module_access
+      name: mast_user_module_access
+      primary_keys:
+        - client_id
+        - user_id
+        - module_id
+      columns:
+        - name: client_id
+          type: INT
+          auto_increment: false
+          not_null: true
+        - name: user_id
+          type: NVARCHAR
+          length: 20
+          auto_increment: false
+          not_null: true
+        - name: module_id
+          type: INT
+          auto_increment: false
+          not_null: true
+        - name: access
+          type: NVARCHAR
+          length: 20
+          auto_increment: false
+          not_null: true
+        - name: created_date
+          type: DATETIME
+          auto_increment: false
+          not_null: false
+          default_value: CURRENT_TIMESTAMP
+        - name: created_user
+          type: NVARCHAR
+          length: 100
+          auto_increment: false
+          not_null: false
+        - name: modified_date
+          type: DATETIME
+          auto_increment: false
+          not_null: false
+        - name: modified_user
+          type: NVARCHAR
+          length: 100
+          auto_increment: false
+          not_null: false

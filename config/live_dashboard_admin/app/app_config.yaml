@@ -1,0 +1,40 @@
+setting:
+  app_id: live_dashboard_admin
+  app_code: live_dashboard_admin
+  app_version: 1.0
+  app_description: A simple ERP system
+  app_author: John Doe
+  app_email: john.doe@example.com
+  user_auth: false
+  log_enabled: true
+
+app_modules:
+  settings:
+    module_id: settings
+    database_id: live_dashboard_admin
+    doc_dsl: ./config/live_dashboard_admin/modules/settings/documents/settings_doc_dsl.yaml
+    log:
+      log_enabled: true
+      log_table: logdata
+      log_database_id: log_db
+
+db_config:
+  live_dashboard_admin:
+    database_id: live_dashboard_admin
+    type: mssql
+    db_name: DEVP_LIVE_DASHBOARD_ADMIN
+    conn_str: sqlserver://sa1:sa@123456@AAI1?database=DEVP_LIVE_DASHBOARD_ADMIN
+    # conn_str: sqlite:cloud_erp.db
+    purpose: app_data
+    schema:
+      - schema_id: settings_schema
+        schema_dsl_file: ./config/live_dashboard_admin/modules/settings/schema/settings_schema.yaml
+  log_db:
+    database_id: log_db
+    type: mssql
+    db_name: DEVP_LIVE_DASHBOARD_ADMIN
+    conn_str: sqlserver://sa1:sa@123456@AAI1?database=DEVP_LIVE_DASHBOARD_ADMIN
+    purpose: log_data
+    schema:   
+      - schema_id: log_schema
+        schema_dsl_file: ./config/live_dashboard_admin/log/log_schema.yaml

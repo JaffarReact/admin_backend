@@ -1,0 +1,9 @@
+rev_eng:
+  type: table_schema
+  app_id: live_dashboard_admin
+  db_name: DEVP_LIVE_DASHBOARD_ADMIN
+  conn_str: sqlserver://sa1:sa@123456@AAI1?database=DEVP_LIVE_DASHBOARD_ADMIN
+  # conn_str: sqlserver://olive:olive@dbsrv@devp.mycomsys.com:1433?database=TEST_SmartInv_v4
+  file_path: ./reveng/schemas
+  tables:
+  - mast_db_component_config

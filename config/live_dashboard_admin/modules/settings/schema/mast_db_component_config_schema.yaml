@@ -1,0 +1,48 @@
+db_schema:
+  schema_id: mast_db_component_config_schema
+  db_name: DEVP_LIVE_DASHBOARD_ADMIN
+  schema_name: mast_db_component_config_schema
+  tables:
+    - table_id: mast_db_component_config
+      name: mast_db_component_config
+      primary_keys:
+        - config_id
+      columns:
+        - name: config_id
+          type: NVARCHAR
+          length: 50
+          auto_increment: false
+          not_null: true
+        - name: module_id
+          type: NVARCHAR
+          length: 50
+          auto_increment: false
+          not_null: false
+        - name: data_source
+          type: NVARCHAR
+          length: 100
+          auto_increment: false
+          not_null: false
+        - name: chart_type
+          type: NVARCHAR
+          length: 50
+          auto_increment: false
+          not_null: false
+        - name: x_axis
+          type: NVARCHAR
+          length: 50
+          auto_increment: false
+          not_null: false
+        - name: y_axis
+          type: NVARCHAR
+          length: 50
+          auto_increment: false
+          not_null: false
+        - name: filters
+          type: NVARCHAR
+          auto_increment: false
+          not_null: false
+        - name: options
+          type: NVARCHAR
+          auto_increment: false
+          not_null: false

@@ -1,0 +1,16 @@
+rev_eng:
+  type: createTables
+  app_id: live_dashboard_admin
+  db_name: DEVP_LIVE_DASHBOARD_ADMIN
+  conn_str: sqlserver://unais:UU@devp@10.190.23.9:1433?database=DEVP_LIVE_DASHBOARD_ADMIN
+  # conn_str: sqlserver://olive:olive@dbsrv@devp.mycomsys.com:1433?database=TEST_SmartInv_v4
+  #file_path: ./autogen/schemas
+  file_path: ./config/cloud_erp/app/app_config.yaml
+  tables:
+    - mast_clients
+    - mast_db_component_config
+    - mast_db_module
+    - mast_location
+    - mast_user_list
+    - mast_user_location_access
+    - mast_user_module_access

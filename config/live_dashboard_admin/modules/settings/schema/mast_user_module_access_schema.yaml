@@ -8,7 +8,6 @@ db_schema:
       primary_keys:
         - client_id
         - user_id
-        - module_id
       columns:
         - name: client_id
           type: INT

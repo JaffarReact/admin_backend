@@ -50,6 +50,11 @@ db_schema:
           length: 1
           auto_increment: false
           not_null: false
+        - name: display_order
+          type: INT
+          auto_increment: false
+          not_null: false
+          default_value: 0
         - name: created_by
           type: NVARCHAR
           length: 50
@@ -122,6 +127,10 @@ db_schema:
           auto_increment: false
           not_null: false
           default_value: 0
+        - name: display_type
+          type: NVARCHAR
+          length: 20
+          auto_increment: false
         - name: filters
           type: NVARCHAR
           auto_increment: false
